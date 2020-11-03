@@ -26,7 +26,7 @@ FORMS += \
     mainwindow.ui
 
 TRANSLATIONS += \
-    processes_manager_pt_BR.ts
+    processes_viewer_pt_BR.ts
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
