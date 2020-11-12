@@ -155,12 +155,10 @@ void MainWindow::on_btn_continuar_clicked()
     }
     kill((pid_t)pid.toInt(), SIGCONT);
 }
-
 void MainWindow::on_ledit_filter_textChanged(const QString &arg1)
 {
     filter_text = arg1;
 }
-
 void MainWindow::on_btn_prio_clicked()
 {
         pid = ui->ledit_pid->text();
@@ -177,7 +175,6 @@ void MainWindow::on_btn_prio_clicked()
         sprintf(bash_command, "renice %d -p %d", ni.toInt(), pid.toInt());
         system(bash_command);
 }
-
 void MainWindow::on_btn_cpu_clicked()
 {
     pid = ui->ledit_pid->text();
