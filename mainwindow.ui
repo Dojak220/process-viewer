@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1000</width>
+    <width>1200</width>
     <height>600</height>
    </rect>
   </property>
@@ -19,7 +19,7 @@
      <rect>
       <x>10</x>
       <y>50</y>
-      <width>980</width>
+      <width>1180</width>
       <height>500</height>
      </rect>
     </property>
@@ -29,6 +29,15 @@ color: 'black';
 border: 1px solid #A50;
 gridline-color: rgb(252, 175, 62);
 selection-background-color: 'orange'</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="gridStyle">
+     <enum>Qt::SolidLine</enum>
     </property>
     <property name="sortingEnabled">
      <bool>false</bool>
@@ -43,7 +52,7 @@ selection-background-color: 'orange'</string>
    <widget class="QPushButton" name="btn_suspender">
     <property name="geometry">
      <rect>
-      <x>790</x>
+      <x>900</x>
       <y>10</y>
       <width>89</width>
       <height>31</height>
@@ -67,7 +76,7 @@ border: 2px solid #A50;</string>
    <widget class="QPushButton" name="btn_matar">
     <property name="geometry">
      <rect>
-      <x>690</x>
+      <x>1100</x>
       <y>10</y>
       <width>89</width>
       <height>31</height>
@@ -88,7 +97,7 @@ border: 2px solid #A50;</string>
    <widget class="QPushButton" name="btn_continuar">
     <property name="geometry">
      <rect>
-      <x>890</x>
+      <x>1000</x>
       <y>10</y>
       <width>89</width>
       <height>31</height>
@@ -111,7 +120,7 @@ border: 2px solid #A50;</string>
      <rect>
       <x>60</x>
       <y>10</y>
-      <width>151</width>
+      <width>101</width>
       <height>31</height>
      </rect>
     </property>
@@ -151,7 +160,7 @@ border-bottom-left-radius: 10px;</string>
    <widget class="QLabel" name="label_prio">
     <property name="geometry">
      <rect>
-      <x>490</x>
+      <x>420</x>
       <y>10</y>
       <width>91</width>
       <height>31</height>
@@ -172,54 +181,10 @@ border-bottom-left-radius: 10px;</string>
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QPushButton" name="btn_m_prio">
-    <property name="geometry">
-     <rect>
-      <x>580</x>
-      <y>10</y>
-      <width>31</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Aumenta a prioridade de um processo selecionado ou digitado ao lado.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: #CFC;
-color: 'green';
-border: 2px solid #7F7;
-border-right-width: 2px;</string>
-    </property>
-    <property name="text">
-     <string>+</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btn_l_prio">
-    <property name="geometry">
-     <rect>
-      <x>610</x>
-      <y>10</y>
-      <width>31</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Diminui a prioridade de um processo selecionado ou digitado ao lado.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: #FCC;
-color: 'black';
-border: 2px solid #F77;
-border-right-width: 2px;</string>
-    </property>
-    <property name="text">
-     <string>-</string>
-    </property>
-   </widget>
    <widget class="QLineEdit" name="ledit_filter">
     <property name="geometry">
      <rect>
-      <x>280</x>
+      <x>220</x>
       <y>10</y>
       <width>191</width>
       <height>31</height>
@@ -243,7 +208,7 @@ border: 2px solid #A50;</string>
    <widget class="QLabel" name="label_filter">
     <property name="geometry">
      <rect>
-      <x>230</x>
+      <x>170</x>
       <y>10</y>
       <width>51</width>
       <height>31</height>
@@ -264,13 +229,127 @@ border-bottom-left-radius: 10px;</string>
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
+   <widget class="QLineEdit" name="ledit_prio">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>10</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="accessibleDescription">
+     <string extracomment="Digite aqui um PID de um processo válido"/>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);
+color: 'green';
+border: 2px solid #A50;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="maxLength">
+     <number>20</number>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_prio">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>10</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Os valores devem estar entre -20 e 19&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: 'black';
+color: 'orange';
+border: 2px solid #A50;</string>
+    </property>
+    <property name="text">
+     <string>OK</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_cpu">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>10</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: 'orange';
+color: 'white';
+border: 2px solid #A50;
+border-right-width: 1px;
+border-top-left-radius: 10px;
+border-bottom-left-radius: 10px;</string>
+    </property>
+    <property name="text">
+     <string>CPU</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="ledit_cpu">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>10</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="accessibleDescription">
+     <string extracomment="Digite aqui um PID de um processo válido"/>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);
+color: 'green';
+border: 2px solid #A50;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="maxLength">
+     <number>20</number>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_cpu">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>10</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Os valores devem estar entre -20 e 19&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: 'black';
+color: 'orange';
+border: 2px solid #A50;</string>
+    </property>
+    <property name="text">
+     <string>OK</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1000</width>
+     <width>1200</width>
      <height>22</height>
     </rect>
    </property>
